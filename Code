@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class J2WhoHasSeenTheWind {
+
+    public static void main(String[] args) {
+       
+        Scanner input = new Scanner (System.in);
+       
+        //Get humidity factor
+        System.out.println("What is the humidity factor?");
+        int humidity = input.nextInt();
+       
+        System.out.println();
+       
+        //Get maximum time
+        System.out.println("What is the amount of hours Margaret is willing to wait?");
+        int maxHours = input.nextInt();
+        for (int time =1; time<=maxHours; time++){
+       
+            //Determine altitude
+        double altitude = -6*Math.pow(time, 4) + humidity*Math.pow(time, 3) + 2*Math.pow(time, 2) + time;
+        if (altitude<=0 ){
+            System.out.println("The ballon touches the ground at hour number " +time);
+            break;
+        }
+        else if (time==maxHours){
+            System.out.println("The ballon does not touch the ground in the time given");
+        }
+       
+       
+           
+           
+           
+       
+        }//End for
+    }
+}
